@@ -1,0 +1,12 @@
+Covid19-TMS :
+
+Les taches réalisées:
+
+1)CRUD techniciens de laboratoires:
+Réalisé par KAMKOUM Sabrine
+
+2)Reset password
+Réalisé par CHARRAD Raed 
+Cette tache consiste à modifier le mot de passe en cas où a oublié l'ancien mot de passe
+Current Admin User Name : admin
+Current Password : admin

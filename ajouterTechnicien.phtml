@@ -1,0 +1,96 @@
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+<?php include_once('includes/sidebar.php');?>
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+          <?php include_once('includes/topbar.php');?>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Ajouter technicien</h1>
+<form name="addphlebotomist" method="post">
+  <div class="row">
+
+                        <div class="col-lg-8">
+
+                            <!-- Basic Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Informations personnels</h6>
+                                </div>
+                                <div class="card-body">
+     <div class="form-group">
+                            <label>CIN du l'employé</label>
+                                            <input type="text" class="form-control" id="empid" name="empid"  placeholder="Entrer la cin de l'employé"   required="true" onBlur="empidAvailability()">
+                                                  <span id="empid-availability-status" style="font-size:12px;"></span>
+                                        </div>
+
+                        <div class="form-group">
+                            <label>Nom et prénom</label>
+                                            <input type="text" class="form-control" id="fullname" name="fullname"  placeholder="Entrer le nom et le prénom" pattern="[A-Za-z ]+" title="letters only" required="true">
+                                        </div>
+                                        <div class="form-group">
+                                             <label>Numéro de téléphone</label>
+                                  <input type="text" class="form-control" id="mobilenumber" name="mobilenumber" placeholder="Entrer le numéro de téléphone" pattern="[0-9]{10}" title="10 numeric characters only" required="true" >
+                                          
+                                        </div>
+                        
+
+
+        <div class="form-group">
+         
+                                 <input type="submit" class="btn btn-primary btn-user btn-block" name="submit" id="submit">                           
+                             </div>                                        
+
+                                </div>
+                            </div>
+
+                        </div>
+
+               
+
+                    </div>
+</form>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+           <?php include_once('includes/footer.php');?>
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+           <?php include_once('includes/footer2.php');?>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
