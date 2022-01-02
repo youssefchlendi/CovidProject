@@ -21,6 +21,7 @@
     $query = $pdo->prepare("SELECT * from tests t where t.id=?");
     $query->execute([$_GET['tid']]);
     $dataTests = $query->fetch();
+    
    /*Récupération de type de test*/
     $typeTest=$dataTests['typeTest'];
     $queryTyp=$pdo->prepare("SELECT * from typetest where $typeTest=id");

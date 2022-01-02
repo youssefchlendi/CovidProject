@@ -17,7 +17,7 @@ if (strlen($_SESSION['aid']==0)) {
 
             $technicien = new Technicien();
             $technicien->edit($fname, $mnumber, $tid);
- echo '<script>alert("Le technicien a été mis à jour")</script>';
+          echo '<script>alert("Le technicien a été mis à jour")</script>';
           echo "<script>window.location.href='gererTechniciens.php'</script>";
      
     

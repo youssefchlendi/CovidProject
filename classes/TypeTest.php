@@ -22,6 +22,12 @@ class TypeTest
         $query = $this->pdo->launchQuery($sql, ['Name' => $Name]);
         return $query->fetch();
     }
+    public function getAll(): array
+    {
+        $sql = 'SELECT * from typetest';
+        $query = $this->pdo->launchQuery($sql, []);
+        return $query->fetchAll();
+    }
 
    
 }

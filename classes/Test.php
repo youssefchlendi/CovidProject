@@ -52,7 +52,46 @@ class Test
       
         return $this->pdo->lastInsertId();
     }
+    public function getNumberTests():string 
+    {
+         $sql = "SELECT count(*) from tests";
+         $query=$this->pdo->launchQuery($sql, []);
+         $value=$query->fetch();
+         return $value['count(*)'];
+    
+    }
+    public function getNumberTestsAssigned():string 
+    {
+        //SELECT count(*) from tests where assigned is not null
+         $sql = "SELECT count(*) from tests where assigned is not null";
+         $query=$this->pdo->launchQuery($sql, []);
+         $value=$query->fetch();
+         return $value['count(*)'];
+    
+    }
+    //$query5=$pdo->query("SELECT count(*) from tests where resultat is not null ");
+    public function getNumberDeliveredTests():string 
+    {
+        //SELECT count(*) from tests where assigned is not null
+         $sql = "SELECT count(*) from tests where resultat is not null ";
+         $query=$this->pdo->launchQuery($sql, []);
+         $value=$query->fetch();
+         return $value['count(*)'];
+    
+    }
+    public function editAssignedTests(int $assigned,int $idTech,date $assignedTime,int $testid):void
+    {
+       // $QueryAssign = $pdo->query("UPDATE tests set assigned='$assignedStatut', tech_id='$IdTech',assignedTime='$assigntime' where id='$testid'");
+        $sql = "UPDATE tests
+                SET
+                    assigned = ?,
+                    tech_id = ?,
+                    assignedTime = ?
+                WHERE id = ?";
+         
+        $pdoStat = $this->pdo->launchQuery($sql, [$assigned, $idTech, $assignedTime, $testid]);
+     
+    }
 
-  
 
 }

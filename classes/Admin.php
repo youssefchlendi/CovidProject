@@ -86,6 +86,18 @@ class Admin
         
     }
 
+    public function ChangePass(string $Password): void 
+    {
+       // $queryChange=$pdo->query("UPDATE admin set password='$confirmPass'");
+        $sql = "UPDATE admin
+                SET
+                    password = ? 
+               ";
+          
+        $pdoStat = $this->pdo->launchQuery($sql, [$Password]);
+     
+    }
+
     
    
     

@@ -11,7 +11,7 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-<?php if($_SESSION['aid']):?>
+<?php if(isset($_SESSION['aid'])):?>
 
 
      <li class="nav-item">
@@ -43,21 +43,20 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="NewTests.php">Nouveau</a>
+                        <a class="collapse-item" href="NewTests.php">Nouveau tests</a>
                         <a class="collapse-item" href="assignToTech.php">Affecter à un technicien</a>
                         <a class="collapse-item" href="Result.php">Rapport fourni au patient</a>
- <a class="collapse-item" href="ToutsTest.php">Touts les tests</a>
+                        <a class="collapse-item" href="ToutsTest.php">Touts les tests</a>
                     </div>
                 </div>
             </li>
    
 <?php else:    ?>          
          
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="live-test-updates.php">
+    <li class="nav-item">
+                <a class="nav-link" href="dashboard.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Tableau de bords</span></a>
+                    <span>Dashboard</span></a>
             </li>
 
             <!-- Divider -->
@@ -73,27 +72,21 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Tester</span>
+                    <span>Testing</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="new-user-testing.php">Nouveau utilisateur</a>
-                        <a class="collapse-item" href="registered-user-testing.php">Utilisateur déjà enregistré</a>
+                        <a class="collapse-item" href="new-user.php">New User</a>
+                        <a class="collapse-item" href="registred-user.php">Already Registered User</a>
                     </div>
                 </div>
             </li>
- <li class="nav-item">
-                <a class="nav-link" href="patient-search-report.php">
-                    <i class="fas fa-fw fa-file"></i>
-                    <span>Test Report</span></a>
-            </li>
-         
+ 
 <li class="nav-item active">
-                <a class="nav-link" href="login.php">
+                <a class="nav-link" href="loginAdmin.php">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Admin</span></a>
             </li>
-
 <?php endif;    ?>          
 
             <!-- Divider -->

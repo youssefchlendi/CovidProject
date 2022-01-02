@@ -49,8 +49,10 @@
                                     <tbody>
 <?php 
     $index=0;
+   
     foreach ($newTests as $test) :
         $index++;
+       
 ?>
             
                                         <tr>
@@ -63,7 +65,7 @@
                                              <td><?php echo $test['RegistrationDate'];?></td>
                                             <td>
                                     
-                                <a href="testDetailsV2.php?tid=<?php echo $test['id'];?>" class="btn btn-info btn-sm">Consultez les détails</a> 
+                                <a href="testDetailsV2.php?tid=<?php echo $test[0];?>" class="btn btn-info btn-sm">Consultez les détails</a> 
 
                             </td>
                                         </tr>

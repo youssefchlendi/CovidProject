@@ -66,5 +66,14 @@ class Patient
         $this->pdo->launchQuery($sql, ['id' => $pid]);
 
     }
+    public function getNumberPatient():string 
+    {
+        //SELECT count(*) from tests where assigned is not null
+         $sql = " SELECT count(*) from patients";
+         $query=$this->pdo->launchQuery($sql, []);
+         $value=$query->fetch();
+         return $value['count(*)'];
+    
+    }
     
 }

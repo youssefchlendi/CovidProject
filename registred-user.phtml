@@ -82,7 +82,9 @@
                     <hr />
                     <?php
     if($row>0){
-    while ($result=mysqli_fetch_array($sql)) {
+        
+        
+    while ($result=$stmt->fetch(PDO::FETCH_ASSOC)) {
       
 
 ?>
@@ -101,22 +103,22 @@
                                         <div class="form-group">
                                             <label>Nom & Prenom</label>
                                             <input type="text" class="form-control" id="fullname" name="fullname"
-                                                value="<?php echo $result['FullName']; ?>" readonly="true">
+                                            readonly="true" value="<?php echo $result['FullName']; ?>" >
                                         </div>
                                         <div class="form-group">
                                             <label>Num Téléphone</label>
                                             <input type="tel" class="form-control" name="mobilenumber"
-                                                value="<?php echo $result['mobile']; ?>" readonly="true">
+                                            readonly="true" value="<?php echo $result['mobile']; ?>" >
                                         </div>
                                         <div class="form-group">
                                             <label>Date d'anniversaire</label>
-                                            <input type="text" class="form-control" name="dob" readonly="true"
-                                                value="<?php echo $result['dateannif']; ?>">
+                                            <input type="text" class="form-control" name="dob" 
+                                            readonly="true" value="<?php echo $result['dateannif']; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>CIN</label>
                                             <input type="tel" class="form-control" id="govtissuedid" name="cin"
-                                                value="<?php echo $result['cin']; ?>" readonly="true">
+                                            readonly="true"  value="<?php echo $result['cin']; ?>" >
                                         </div>
 
                                         <div class="form-group">
@@ -127,7 +129,7 @@
                                         <div class="form-group">
                                             <label>State</label>
                                             <input type="text" class="form-control" id="state" name="state"
-                                                value="<?php echo $result['state']; ?>" readonly="true">
+                                            readonly="true"  value="<?php echo $result['state']; ?>">
                                         </div>
 
                                     </div>
@@ -145,11 +147,9 @@
                                         <div class="form-group">
                                             <label>Test Type</label>
                                             <select class="form-control" id="testtype" name="testtype" required="true">
-                                                <option value="">Select</option>
-                                                <option value="RT-LAMP">RT-LAMP</option>
-                                                <option value="RT-PCR">RT-PCR</option>
-                                                <option value="Antigen">RT-d'antigène</option>
-                                                <option value="anticorps">anticorps</option>
+                                            <?php foreach ($typeTest as $type) : ?>
+                                                <option><?php echo $type['nomTest']; ?></option>
+                                            <?php endforeach; ?>
 
                                             </select>
                                         </div>

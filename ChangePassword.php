@@ -20,7 +20,7 @@
            //$admin = $queryAd->fetch();
            if (count($admin)>0){
              if ($newPass==$confirmPass){
-                 $queryChange=$pdo->query("UPDATE admin set password='$confirmPass'");
+                $adminGet->changePass($confirmPass);
                  echo "<script>alert('Mot de passe changé avec succés!')</script>";
                  echo "<script>window.location.href='loginAdmin.php'</script>";
                 
@@ -30,7 +30,7 @@
              }
            }
            else {
-            echo "<script>alert('Le mot de passe est incorrecte')</script>";
+            echo "<script>alert('Le mot de passe est incorrect')</script>";
            }
        }
     }

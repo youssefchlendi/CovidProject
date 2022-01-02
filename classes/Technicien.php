@@ -88,5 +88,23 @@ class Technicien
         $this->pdo->launchQuery($sql, ['id' => $pid]);
 
     }
+    public function getNumberTechnicien():string 
+    {
+        //SELECT count(*) from tests where assigned is not null
+         $sql = " SELECT count(*) from techniciens";
+         $query=$this->pdo->launchQuery($sql, []);
+         $value=$query->fetch();
+         return $value['count(*)'];
+    
+    }
+    public function getTechnicienByName(string $name):array
+    {
+        //$AssignedTech = $pdo->query("SELECT techID from techniciens where FullName='$assignto'");
+        $sql = "SELECT techID from techniciens where FullName= ? ";
+        $query = $this->pdo->launchQuery($sql,[$name]);
+        return $query->fetch();       
+    }
+    
+  
     
 }

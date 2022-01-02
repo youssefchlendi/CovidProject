@@ -26,21 +26,7 @@
                 }
         }
     }
-      
-
-
-
-
-
-
-
-
     $template = 'ajouterTechnicien';
     $pageTitle = 'Ajouter technicien';
     include './layout.phtml';
-
-
-
-
-
 ?>

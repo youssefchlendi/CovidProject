@@ -14,9 +14,7 @@
         $ttests = $query->fetchAll();
       
 
-
-
-    } 
+  } 
     $template = 'ToutsTest';
     $pageTitle = 'Touts les tests';
     include './layout.phtml';
